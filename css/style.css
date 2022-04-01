@@ -1,0 +1,636 @@
+@font-face {
+  font-family: "OCR";
+  src: url("../fonts/OCR.otf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+  position: relative;
+  font-family: monospace;
+  color: #fff;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "OCR", monospace;
+}
+
+body::after {
+  content: "";
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header canvas {
+  opacity: 0.25;
+}
+
+header div#title-container {
+  position: absolute;
+  text-align: center;
+  z-index: 3;
+}
+
+header div#title-container svg#dhlogo {
+  fill: #fff;
+  height: 50vh;
+  max-width: 90%;
+  margin-bottom: 24px;
+}
+
+header h2 {
+  bottom: 25%;
+  color: #fff;
+  font-weight: normal;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+header::after {
+  content: "";
+  height: 25vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+svg.down-arrow {
+  position: absolute;
+  width: 50px;
+  height: 25px;
+  bottom: 20px;
+  stroke: #fff;
+  z-index: 5;
+  cursor: pointer;
+  padding: 10px;
+}
+
+svg .arrow-line {
+  fill: none;
+  stroke-width: 16;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 10;
+}
+
+body > section {
+  min-height: 100vh;
+  background: #000;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 120px 0;
+  box-sizing: border-box;
+}
+
+section#about canvas {
+  position: absolute;
+  top: 0;
+}
+
+.section-inner {
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #fff;
+  width: 1280px;
+  max-width: calc(100% - 80px);
+  text-align: center;
+  z-index: 5;
+  position: relative;
+}
+
+.section-inner::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+}
+
+section#about::before,
+section#skills::before,
+section#portfolio::before,
+section#contact::before {
+  content: "";
+  height: 25vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+section#about::after,
+section#skills::after,
+section#portfolio::after,
+section#contact::after {
+  content: "";
+  height: 25vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+}
+
+section#about h3 {
+  margin-bottom: 20px;
+}
+
+section#about p {
+  margin-bottom: 20px;
+}
+
+section#about p:last-of-type {
+  margin-bottom: 40px;
+}
+
+section#about a {
+  z-index: 6;
+  color: #fff;
+  margin-bottom: 20px;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 2px solid;
+}
+
+section#about a span {
+  padding: 20px;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 2px;
+}
+
+section#about a i {
+  font-size: 20px;
+}
+
+section#about a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+}
+
+section#skills {
+  overflow: hidden;
+}
+
+section#skills svg.gears {
+  stroke: #000;
+  stroke-miterlimit: 10;
+  position: absolute;
+  height: 100%;
+  max-height: 100vh;
+  top: 50%;
+}
+
+section#skills svg.gears-left {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+
+section#skills svg.gears-right {
+  right: 0;
+  transform: translate(50%, -50%) rotateY(180deg);
+}
+
+section#skills .st0 {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+section#skills h3 {
+  margin-bottom: 80px;
+  z-index: 3;
+}
+
+section#skills #skills-list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 180px));
+  width: calc(100% - 240px);
+  max-width: 960px;
+  justify-content: center;
+  z-index: 3;
+  margin-bottom: 80px;
+}
+
+section#skills #skills-list li {
+  margin-left: 16px;
+}
+
+section#skills #certs-list {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 320px));
+  width: calc(100% - 240px);
+  max-width: 960px;
+  justify-content: center;
+  z-index: 5;
+}
+
+section#skills #certs-list li {
+  border-radius: 5px;
+  text-align: center;
+  list-style: none;
+  border: 2px solid;
+  position: relative;
+}
+
+section#skills #certs-list li span {
+  display: block;
+  font-size: 0.8em;
+  margin-top: 5px;
+}
+
+section#skills #certs-list li a {
+  position: relative;
+  text-decoration: none;
+  color: unset;
+  padding: 20px;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 3px;
+}
+
+section#skills #certs-list li a::after {
+  content: "";
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+section#portfolio h3 {
+  margin-bottom: 40px;
+  z-index: 3;
+}
+
+#portfolio-cards {
+  display: grid;
+  grid-gap: 40px;
+  z-index: 5;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 480px));
+  width: 100%;
+  max-width: calc(100% - 80px);
+  justify-content: center;
+  justify-items: center;
+}
+
+.portfolio-card-outer {
+  transition: all 500ms ease-in-out;
+  max-width: 100%;
+}
+
+.portfolio-card {
+  position: relative;
+  width: 480px;
+  height: 240px;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 30%, 100% 70%, 85% 100%, 15% 100%, 0% 70%, 0% 30%);
+  max-width: 100%;
+}
+
+.portfolio-card-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-card-outer:nth-of-type(1) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/thehartattack.jpg");
+}
+
+.portfolio-card-outer:nth-of-type(2) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/stardust.jpg");
+}
+
+.portfolio-card-outer:nth-of-type(3) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/heretichearts.jpg");
+}
+
+.portfolio-card-outer:nth-of-type(4) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/danhart.jpg");
+}
+
+.portfolio-card-outer:nth-of-type(5) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/fifteenpens.jpg");
+}
+
+.portfolio-card-outer:nth-of-type(6) .portfolio-card-left {
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px), url("../img/apocalypse.jpg");
+}
+
+.portfolio-card-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #0a0a0a;
+  background-image: repeating-linear-gradient(rgba(0, 0, 0, 0.3) 0, transparent 1px, transparent 2px, rgba(0, 0, 0, 0.3) 3px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  clip: unset !important;
+  right: 0 !important;
+  left: unset !important;
+  transform: none !important;
+  z-index: 9;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.portfolio-card-right h4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.portfolio-card-right a {
+  margin: 5px;
+  color: #fff;
+  transition: color 250ms ease-in-out;
+}
+
+.grid {
+  position: absolute;
+}
+
+.tl-grid {
+  top: 4px;
+  left: 4px;
+}
+
+.tr-grid {
+  top: 4px;
+  right: 4px;
+}
+
+.bl-grid {
+  bottom: 4px;
+  left: 4px;
+}
+
+.br-grid {
+  bottom: 4px;
+  right: 4px;
+}
+
+.grid-inner {
+  display: grid;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.grid-shadow {
+  position: absolute;
+  opacity: 0.1;
+  display: grid;
+  grid-column-gap: 4px;
+  grid-row-gap: 4px;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+
+.grid-square {
+  height: 20px;
+  width: 20px;
+}
+
+.grid-square.blackout {
+  background-color: unset;
+}
+
+section#contact {
+  min-height: calc(100vh - 125px);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 40px 0;
+}
+
+section#contact svg#cyber-lines-left {
+  position: absolute;
+  left: 0;
+  width: 25vw;
+}
+
+section#contact svg#cyber-lines-right {
+  position: absolute;
+  right: 0;
+  width: 25vw;
+}
+
+section#contact svg .linedraw {
+  fill: none;
+  stroke-width: 4;
+  stroke-miterlimit: 10;
+  display: none;
+}
+
+section#contact h3 {
+  margin-bottom: 20px;
+  z-index: 3;
+}
+
+section#contact p {
+  z-index: 3;
+  width: 50%;
+  margin: 0 auto 40px auto;
+}
+
+section#contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  z-index: 5;
+  width: 50%;
+}
+
+section#contact form input,
+section#contact form textarea {
+  padding: 10px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+section#contact form textarea {
+  resize: none;
+  height: 192px;
+}
+
+section#contact form input#contact-submit {
+  width: 25%;
+  min-width: 100px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+section#contact form input#contact-submit[disabled] {
+  cursor: auto;
+}
+
+section#contact .contact-response {
+  height: 43px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 125px;
+}
+
+footer div {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer svg#footer-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 25px;
+  stroke: #fff;
+  z-index: 5;
+  cursor: pointer;
+  padding: 10px;
+}
+
+@media only screen and (max-width: 1200px) {
+  section#about {
+    padding: 20px 0 85px;
+  }
+
+  .section-inner {
+    max-width: calc(100% - 40px);
+  }
+
+  section#contact {
+    min-height: calc(100vh - 165px);
+  }
+
+  section#contact svg#cyber-lines-left {
+    left: -20vw;
+    width: 50vw;
+  }
+
+  section#contact svg#cyber-lines-right {
+    right: -20vw;
+    width: 50vw;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  footer svg#footer-arrow {
+    order: 3;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  header div#title-container svg#dhlogo {
+    height: unset;
+  }
+
+  .section-inner {
+    max-width: calc(100% - 20px);
+  }
+
+  section#portfolio {
+    padding: 120px 0 180px;
+  }
+
+  section#contact p {
+    width: 75%;
+  }
+
+  section#contact form {
+    width: 75%;
+  }
+
+  section#contact .contact-response {
+    width: 75%;
+  }
+
+  section#contact svg#cyber-lines-left {
+    left: -25vw;
+  }
+
+  section#contact svg#cyber-lines-right {
+    right: -25vw;
+  }
+}
